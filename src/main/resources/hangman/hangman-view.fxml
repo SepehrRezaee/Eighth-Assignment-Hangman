@@ -1,16 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="hangman.HangmanController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
+<GridPane fx:controller="hangman.HangmanController" xmlns:fx="http://javafx.com/fxml" alignment="CENTER" hgap="10"
+          vgap="10">
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+    <!-- Login and Signup -->
+    <TextField fx:id="usernameField" GridPane.rowIndex="0" GridPane.columnIndex="1" promptText="Username"/>
+    <PasswordField fx:id="passwordField" GridPane.rowIndex="1" GridPane.columnIndex="1" promptText="Password"/>
+    <TextField fx:id="nameField" GridPane.rowIndex="2" GridPane.columnIndex="1" promptText="Name (for signup)"/>
+    <Button fx:id="loginButton" text="Login" onAction="#handleLogin" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+    <Button fx:id="signupButton" text="Signup" onAction="#handleSignup" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+    <!-- Main Menu -->
+    <Button fx:id="startGameButton" text="Start Game" onAction="#handleStartGame" GridPane.rowIndex="5"
+            GridPane.columnIndex="1"/>
+    <Button fx:id="viewGamesButton" text="View Games" onAction="#handleViewGames" GridPane.rowIndex="6"
+            GridPane.columnIndex="1"/>
+    <Button fx:id="viewLeaderboardButton" text="View Leaderboard" onAction="#handleViewLeaderboard"
+            GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+
+    <!-- Game Area -->
+    <GridPane fx:id="hangmanPane" GridPane.rowIndex="8" GridPane.columnIndex="0" GridPane.columnSpan="2" hgap="10"
+              vgap="10"/>
+
+    <!-- Message Label -->
+    <Label fx:id="messageLabel" GridPane.rowIndex="9" GridPane.columnIndex="0" GridPane.columnSpan="2"/>
+
+</GridPane>
